@@ -1,6 +1,7 @@
 import path from "path"
 import express from "express"
 import * as dotenv from "dotenv"
+import cors from "cors"
 import bodyParser from "body-parser"
 import colors from "colors"
 import morgan from "morgan"
@@ -21,6 +22,11 @@ if (process.env.NODE_ENV === "development") {
 
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https://proshop.onrender.com"],
+  })
+)
 
 app.use("/api/products", productRoutes)
 app.use("/api/users", userRoutes)
