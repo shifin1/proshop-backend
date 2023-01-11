@@ -24,7 +24,7 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://proshop-eddc.onrender.com/"],
+    origin: ["http://localhost:3000", "https://proshop-eddc.onrender.com"],
   })
 )
 
@@ -58,6 +58,6 @@ const PORT = process.env.PORT || 5000
 
 connectDB().then(() => {
   app.listen(PORT, () => {
-    console.log("listening for requests")
+    console.log(`server running on ${PORT} in ${process.env.NODE_ENV} mode`)
   })
 })
