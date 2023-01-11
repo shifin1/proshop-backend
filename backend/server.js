@@ -24,7 +24,7 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://proshop.onrender.com"],
+    origin: ["http://localhost:3000", "https://proshop-eddc.onrender.com/"],
   })
 )
 
